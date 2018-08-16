@@ -10,5 +10,5 @@ The remaining columns are geologic and bioclimatic variables from the USGS and W
 
 That leaves, for the model specification:  
 
-$dry ~ hyd_cond + tmin1...tmin12 + tmax1...tmax12 + prec1...prec12 + bio1...bio12$   
+dry ~ hyd_cond + tmin1...tmin12 + tmax1...tmax12 + prec1...prec12 + bio1...bio12   
 
