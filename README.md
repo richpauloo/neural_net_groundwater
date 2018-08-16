@@ -12,3 +12,6 @@ That leaves, for the model specification:
 
 dry ~ hyd_cond + tmin1...tmin12 + tmax1...tmax12 + prec1...prec12 + bio1...bio12   
 
+**IMPORTANT:** the ratio of failures to non-failures, or `1/0`, in the dataset is around 5%. This means that it's possible to achieve a training accuracy of 95% with a null model by simply assuming that no observation fails. We've navigated around this by equally sampling the failure and non-failure sets.  
+
+In the future, we should compare the results from *multiple* non-failure sets as a way to bootstrap different non-failure sets and provide an estimate of the uncertainty inherent in our random selection of non-failing points.  
