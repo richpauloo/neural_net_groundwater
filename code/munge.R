@@ -27,10 +27,11 @@ j <- sample(1:nrow(wet), floor(.8*nrow(dry)), replace = FALSE)
 wet_train <- wet[j, ]
 wet_test  <- wet[-j, ] %>% sample_n(nrow(dry_test))
 
+# bind train and test sets
+train <- cbind.data.frame(dry_train, wet_train)
+test  <- cbind.data.frame(dry_test, wet_test)
+
 # write
 data <- "/Users/richpauloo/Documents/GitHub/neural_net_groundwater/data/"
-dry_train %>% write_csv(paste0(data, "dry_train.csv"))
-dry_test  %>% write_csv(paste0(data, "dry_test.csv"))
-wet_train %>% write_csv(paste0(data, "wet_train.csv"))
-wet_test  %>% write_csv(paste0(data, "wet_test.csv"))
-
+train %>% write_csv(paste0(data, "train.csv"))
+test  %>% write_csv(paste0(data, "test.csv"))
